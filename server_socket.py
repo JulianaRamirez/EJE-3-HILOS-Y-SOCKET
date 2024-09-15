@@ -9,7 +9,7 @@ server_address = ("localhost", 65432)
 server_socket.bind(server_address)
 
 # Escuchar conexiones entrantes
-server_socket.listen(1)
+server_socket.listen(5)
 print(f"Servidor escuchando en {server_address}")
 
 def adivinar_numero(minimo, maximo, numero_adivinar):
@@ -43,7 +43,7 @@ while True:
     connection, client_address = server_socket.accept()
     
     try:
-        print(f"Conexión establecida con {client_address}")
+        print(f"Conexión establecida con: {client_address}")
 
         # Recibir los datos en fragmentos
         data = connection.recv(1024)

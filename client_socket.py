@@ -10,10 +10,10 @@ client_socket.connect(server_address)
 try:
     # Enviar datos
     message = "Hola, servidor"
-    minimun_number = int(input("Ingrese el número mínimo"))
-    maximun_number = int(input("Ingrese el número máximo"))
-    number_to_guess = int(input("Ingrese el número a adivinar"))
-    is_complete = input("Ingresa terminar o seguir para completar la operacion")
+    minimun_number = int(input("Ingrese el número mínimo" ":"))
+    maximun_number = int(input("Ingrese el número máximo" ":"))
+    number_to_guess = int(input("Ingrese el número a adivinar" ":"))
+    is_complete = input("Si no deseas jugar mas ingresa la palabra terminar de lo contrario dale enter para continuar" ":")
     print(f"Enviando: {message}")
 
     numbers = f"{minimun_number},{maximun_number},{number_to_guess},{is_complete}"
