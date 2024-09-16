@@ -1,7 +1,7 @@
 import socket
 import random
 
-# Crear un socket de servidor TCP/IP
+# Crear un socket de servidor
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Vincular el socket a la dirección y puerto
@@ -45,13 +45,12 @@ while True:
     try:
         print(f"Conexión establecida con: {client_address}")
 
-        # Recibir los datos en fragmentos
+        # Recibe los datos
         data = connection.recv(1024)
         if data:
             received_message = data.decode()
             print(f"Recibido: {received_message}")
 
-           
             # Separar los números usando el delimitador
             numbers_str = received_message.split(",")
             
@@ -66,13 +65,13 @@ while True:
                 else:
                     cantidad_turnos_fallidos += 1
                 
-                if numbers_str[3] == "terminar":
-                    connection.close()
-                    break
-
                 # Imprimir los contadores
                 print(f"La cantidad de turnos exitosos es {cantidad_turnos_exitosos}")
                 print(f"La cantidad de turnos fallidos es {cantidad_turnos_fallidos}")
+
+                if numbers_str[3] == "terminar":
+                    connection.close()
+                    break
                
             else:
                 print("No se recibieron suficientes números.")
@@ -84,7 +83,5 @@ while True:
             print("No hay más datos del cliente")
    
     finally:
-        if received_message == "0,0,0":
-        # Cerrar la conexión
             connection.close()
   

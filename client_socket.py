@@ -1,6 +1,6 @@
 import socket
 
-# Crear un socket de cliente TCP/IP
+# Crear un socket de cliente
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Conectar el socket al servidor
@@ -10,7 +10,7 @@ client_socket.connect(server_address)
 try:
     # Enviar datos
     message = "Hola, servidor"
-    minimun_number = int(input("Ingrese el número mínimo" ":"))
+    minimun_number = int(input("Ingrese el número mínimo:"))
     maximun_number = int(input("Ingrese el número máximo" ":"))
     number_to_guess = int(input("Ingrese el número a adivinar" ":"))
     is_complete = input("Si no deseas jugar mas ingresa la palabra terminar de lo contrario dale enter para continuar" ":")
